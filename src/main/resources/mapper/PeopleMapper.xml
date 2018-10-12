@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tie.springtest02.dao.PeopleMapper">
+  <resultMap id="BaseResultMap" type="com.tie.springtest02.model.People">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+  </resultMap>
+
+  <select id="selectByName" resultMap="BaseResultMap">
+    SELECT * from people where NAME = #{name} AND age=#{age}
+  </select>
+</mapper>
